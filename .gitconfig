@@ -1,0 +1,5 @@
+[user]
+	email = toby@tzcl.me
+	name = Toby Law
+[credential]
+	helper = cache --timeout=3600
