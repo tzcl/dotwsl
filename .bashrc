@@ -117,13 +117,9 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=~/.emacs.d/bin:$PATH
-export DISPLAY="`ip -4 address | grep -A1 eth0 | grep inet | cut -d' ' -f6 | cut -d/ -f1`:0"
+export DISPLAY=$(hostname -I | xargs echo):0
 export LIBGL_ALWAYS_INDIRECT=1
 export BROWSER=/mnt/c/PROGRA~2/Google/Chrome/Application/chrome.exe
-
-if [ "$HOSTNAME" = Toby-XPS ]; then
-	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
-fi
 
 alias emacs='setsid emacs'
 alias ec='emacs; exit'
