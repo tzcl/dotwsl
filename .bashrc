@@ -117,7 +117,8 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=~/.emacs.d/bin:$PATH
-export DISPLAY=$(hostname -I | xargs echo):0
+export EDITOR=vi
+export DISPLAY=$(hostname -I | awk '{ print $2 }' | xargs echo):0
 export LIBGL_ALWAYS_INDIRECT=1
 export BROWSER=/mnt/c/PROGRA~2/Google/Chrome/Application/chrome.exe
 
